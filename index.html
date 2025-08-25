@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BOTIQ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="eel.js"></script>
+</head>
+<body>
+  <div class="center">
+    <div class="orb"></div>
+    <p id="status">Ask me anything</p>
+    <input type="text" id="textInput" placeholder="type here ..." />
+    <button onclick="send()">Send</button>
+    <button onclick="eel.start_voice()">🎤 Speak</button>
+    <div id="responseBox"></div>
+  </div>
+
+  <script>
+    function send() {
+      const text = document.getElementById('textInput').value;
+      if (text.trim() !== "") {
+        eel.display_user(text);
+        eel.process(text);
+        document.getElementById('textInput').value = "";
+      }
+    }
+
+    eel.expose(show_response);
+    function show_response(text) {
+      document.getElementById("responseBox").innerText = text;
+    }
+
+    eel.expose(set_status);
+    function set_status(text) {
+      document.getElementById("status").innerText = text;
+    }
+
+    eel.expose(display_user);
+    function display_user(text) {
+      document.getElementById("responseBox").innerText = "You: " + text;
+    }
+  </script>
+</body>
+</html>
