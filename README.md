@@ -12,6 +12,4 @@ The main goal of BOTIQ is to provide a hands-free, intelligent, and interactive 
 
 🧠 AI Integration – Smart responses powered by GPT.
 
-This project is designed to be lightweight, customizable, and extendable, making it a great foundation for adding future features like IoT device control, scheduling, entertainment commands, or even mobile app integration.
-
 BOTIQ is not just a chatbot – it’s a step toward building a personal AI companion that adapts to user needs and improves the way we interact with technology.
